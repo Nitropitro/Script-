@@ -2,7 +2,7 @@ local player = game.Players.LocalPlayer
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Test Script", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Nitro Script", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 --[[
 Name = <string> - The name of the UI.
@@ -29,7 +29,7 @@ PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
 local Section = Tab:AddSection({
-	Name = "Scrip7"
+	Name = "Scripts"
 })
 
 --[[
@@ -37,7 +37,7 @@ Name = <string> - The name of the section.
 ]]
 
 OrionLib:MakeNotification({
-	Name = "Welcome Test Script",
+	Name = "Welcome Nitro Script",
 	Content = "Thx",
 	Image = "rbxassetid://4483345998",
 	Time = 5
