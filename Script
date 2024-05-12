@@ -398,3 +398,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-s
 Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
+
+Tab:AddButton({
+	Name = "Fly gui v3",
+	Callback = function()
+      		print("Thx")
+loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
