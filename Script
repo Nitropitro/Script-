@@ -416,7 +416,7 @@ Tab:AddButton({
 	Name = "Move sun",
 	Callback = function()
       		print("Thx")
-loadstring(game:HttpGet(('https://pastefy.app/oi4CGDzs/raw'),true))()
+loadstring(game:HttpGet(('https://pastefy.app/oi4CGDzs/raw'),true))();
   	end    
 })
 
