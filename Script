@@ -411,3 +411,16 @@ loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
 Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
+
+Tab:AddButton({
+	Name = "infinity yield ♾️",
+	Callback = function()
+      		print("Thx")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
