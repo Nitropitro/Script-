@@ -53,7 +53,7 @@ Time = <number> - The duration of the notfication.
 Tab:AddButton({
 	Name = "Esp",
 	Callback = function()
-      		print("Idk")
+      		print("Thx")
 local FillColor = Color3.fromRGB(175,25,255)
 local DepthMode = "AlwaysOnTop"
 local FillTransparency = 0.5
@@ -117,7 +117,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/maste
 Tab:AddButton({
 	Name = "Old animation only work r6",
 	Callback = function()
-      		print("1")
+      		print("Thx")
 game.Players.LocalPlayer.Character:BreakJoints()
    game.Players.LocalPlayer.Character=nil
    Connection = game.Workspace.DescendantAdded:Connect(function(c)
@@ -385,3 +385,16 @@ move(time)
 end
   	end    
 })
+
+Tab:AddButton({
+	Name = "Synapse x",
+	Callback = function()
+      		print("Thx")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
