@@ -1,0 +1,387 @@
+local player = game.Players.LocalPlayer
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Test Script", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+--[[
+Name = <string> - The name of the UI.
+HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+SaveConfig = <bool> - Toggles the config saving in the UI.
+ConfigFolder = <string> - The name of the folder where the configs are saved.
+IntroEnabled = <bool> - Whether or not to show the intro animation.
+IntroText = <string> - Text to show in the intro animation.
+IntroIcon = <string> - URL to the image you want to use in the intro animation.
+Icon = <string> - URL to the image you want displayed on the window.
+CloseCallback = <function> - Function to execute when the window is closed.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Tab 1",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Scrip7"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+OrionLib:MakeNotification({
+	Name = "Welcome Test Script",
+	Content = "Thx",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+--[[
+Title = <string> - The title of the notification.
+Content = <string> - The content of the notification.
+Image = <string> - The icon of the notification.
+Time = <number> - The duration of the notfication.
+]]
+
+Tab:AddButton({
+	Name = "Esp",
+	Callback = function()
+      		print("Idk")
+local FillColor = Color3.fromRGB(175,25,255)
+local DepthMode = "AlwaysOnTop"
+local FillTransparency = 0.5
+local OutlineColor = Color3.fromRGB(255,255,255)
+local OutlineTransparency = 0
+
+local CoreGui = game:FindService("CoreGui")
+local Players = game:FindService("Players")
+local lp = Players.LocalPlayer
+local connections = {}
+
+local Storage = Instance.new("Folder")
+Storage.Parent = CoreGui
+Storage.Name = "Highlight_Storage"
+
+local function Highlight(plr)
+    local Highlight = Instance.new("Highlight")
+    Highlight.Name = plr.Name
+    Highlight.FillColor = FillColor
+    Highlight.DepthMode = DepthMode
+    Highlight.FillTransparency = FillTransparency
+    Highlight.OutlineColor = OutlineColor
+    Highlight.OutlineTransparency = 0
+    Highlight.Parent = Storage
+    
+    local plrchar = plr.Character
+    if plrchar then
+        Highlight.Adornee = plrchar
+    end
+
+    connections[plr] = plr.CharacterAdded:Connect(function(char)
+        Highlight.Adornee = char
+    end)
+end
+
+Players.PlayerAdded:Connect(Highlight)
+for i,v in next, Players:GetPlayers() do
+    Highlight(v)
+end
+
+Players.PlayerRemoving:Connect(function(plr)
+    local plrname = plr.Name
+    if Storage[plrname] then
+        Storage[plrname]:Destroy()
+    end
+    if connections[plr] then
+        connections[plr]:Disconnect()
+    end
+end)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Owl hub",
+	Callback = function()
+      		print("1")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Old animation only work r6",
+	Callback = function()
+      		print("1")
+game.Players.LocalPlayer.Character:BreakJoints()
+   game.Players.LocalPlayer.Character=nil
+   Connection = game.Workspace.DescendantAdded:Connect(function(c)
+       if c.Name == "Animate" then
+           c.Disabled=true        
+       end
+   end)
+   repeat wait() until game.Players.LocalPlayer.Character
+   Char = game.Players.LocalPlayer.Character
+   Died = game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function()
+       Connection:Disconnect()
+       Died:Disconnect()
+   end)
+   wait(.1)
+   function waitForChild(parent, childName)
+local child = parent:findFirstChild(childName)
+if child then return child end
+while true do
+ child = parent.ChildAdded:wait()
+ if child.Name==childName then return child end
+end
+end
+
+-- ANIMATION
+
+-- declarations
+
+local Figure = game.Players.LocalPlayer.Character
+local Torso = waitForChild(Figure, "Torso")
+local RightShoulder = waitForChild(Torso, "Right Shoulder")
+local LeftShoulder = waitForChild(Torso, "Left Shoulder")
+local RightHip = waitForChild(Torso, "Right Hip")
+local LeftHip = waitForChild(Torso, "Left Hip")
+local Neck = waitForChild(Torso, "Neck")
+local Humanoid = waitForChild(Figure, "Humanoid")
+local pose = "Standing"
+
+local toolAnim = "None"
+local toolAnimTime = 0
+
+local jumpMaxLimbVelocity = 0.75
+
+-- functions
+
+function onRunning(speed)
+if speed>0 then
+ pose = "Running"
+else
+ pose = "Standing"
+end
+end
+
+function onDied()
+pose = "Dead"
+end
+
+function onJumping()
+pose = "Jumping"
+end
+
+function onClimbing()
+pose = "Climbing"
+end
+
+function onGettingUp()
+pose = "GettingUp"
+end
+
+function onFreeFall()
+pose = "FreeFall"
+end
+
+function onFallingDown()
+pose = "FallingDown"
+end
+
+function onSeated()
+pose = "Seated"
+end
+
+function onPlatformStanding()
+pose = "PlatformStanding"
+end
+
+function onSwimming(speed)
+if speed>0 then
+ pose = "Running"
+else
+ pose = "Standing"
+end
+end
+
+function moveJump()
+RightShoulder.MaxVelocity = jumpMaxLimbVelocity
+LeftShoulder.MaxVelocity = jumpMaxLimbVelocity
+ RightShoulder:SetDesiredAngle(3.14)
+LeftShoulder:SetDesiredAngle(-3.14)
+RightHip:SetDesiredAngle(0)
+LeftHip:SetDesiredAngle(0)
+end
+
+
+-- same as jump for now
+
+function moveFreeFall()
+RightShoulder.MaxVelocity = jumpMaxLimbVelocity
+LeftShoulder.MaxVelocity = jumpMaxLimbVelocity
+RightShoulder:SetDesiredAngle(3.14)
+LeftShoulder:SetDesiredAngle(-3.14)
+RightHip:SetDesiredAngle(0)
+LeftHip:SetDesiredAngle(0)
+end
+
+function moveSit()
+RightShoulder.MaxVelocity = 0.15
+LeftShoulder.MaxVelocity = 0.15
+RightShoulder:SetDesiredAngle(3.14 /2)
+LeftShoulder:SetDesiredAngle(-3.14 /2)
+RightHip:SetDesiredAngle(3.14 /2)
+LeftHip:SetDesiredAngle(-3.14 /2)
+end
+
+function getTool()
+for _, kid in ipairs(Figure:GetChildren()) do
+ if kid.className == "Tool" then return kid end
+end
+return nil
+end
+
+function getToolAnim(tool)
+for _, c in ipairs(tool:GetChildren()) do
+ if c.Name == "toolanim" and c.className == "StringValue" then
+  return c
+ end
+end
+return nil
+end
+
+function animateTool()
+
+if (toolAnim == "None") then
+ RightShoulder:SetDesiredAngle(1.57)
+ return
+end
+
+if (toolAnim == "Slash") then
+ RightShoulder.MaxVelocity = 0.5
+ RightShoulder:SetDesiredAngle(0)
+ return
+end
+
+if (toolAnim == "Lunge") then
+ RightShoulder.MaxVelocity = 0.5
+ LeftShoulder.MaxVelocity = 0.5
+ RightHip.MaxVelocity = 0.5
+ LeftHip.MaxVelocity = 0.5
+ RightShoulder:SetDesiredAngle(1.57)
+ LeftShoulder:SetDesiredAngle(1.0)
+ RightHip:SetDesiredAngle(1.57)
+ LeftHip:SetDesiredAngle(1.0)
+ return
+end
+end
+
+function move(time)
+local amplitude
+local frequency
+ 
+if (pose == "Jumping") then
+ moveJump()
+ return
+end
+
+if (pose == "FreeFall") then
+ moveFreeFall()
+ return
+end
+
+if (pose == "Seated") then
+ moveSit()
+ return
+end
+
+local climbFudge = 0
+
+if (pose == "Running") then
+   if (RightShoulder.CurrentAngle > 1.5 or RightShoulder.CurrentAngle < -1.5) then
+  RightShoulder.MaxVelocity = jumpMaxLimbVelocity
+ else  
+  RightShoulder.MaxVelocity = 0.15
+ end
+ if (LeftShoulder.CurrentAngle > 1.5 or LeftShoulder.CurrentAngle < -1.5) then
+  LeftShoulder.MaxVelocity = jumpMaxLimbVelocity
+ else  
+  LeftShoulder.MaxVelocity = 0.15
+ end
+ amplitude = 1
+ frequency = 9
+elseif (pose == "Climbing") then
+ RightShoulder.MaxVelocity = 0.5
+ LeftShoulder.MaxVelocity = 0.5
+ amplitude = 1
+ frequency = 9
+ climbFudge = 3.14
+else
+ amplitude = 0.1
+ frequency = 1
+end
+
+desiredAngle = amplitude * math.sin(time*frequency)
+
+RightShoulder:SetDesiredAngle(desiredAngle + climbFudge)
+LeftShoulder:SetDesiredAngle(desiredAngle - climbFudge)
+RightHip:SetDesiredAngle(-desiredAngle)
+LeftHip:SetDesiredAngle(-desiredAngle)
+
+
+local tool = getTool()
+
+if tool then
+
+ animStringValueObject = getToolAnim(tool)
+
+ if animStringValueObject then
+  toolAnim = animStringValueObject.Value
+  -- message recieved, delete StringValue
+  animStringValueObject.Parent = nil
+  toolAnimTime = time + .3
+ end
+
+ if time > toolAnimTime then
+  toolAnimTime = 0
+  toolAnim = "None"
+ end
+
+ animateTool()
+
+ 
+else
+ toolAnim = "None"
+ toolAnimTime = 0
+end
+end
+
+
+-- connect events
+
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+Humanoid.PlatformStanding:connect(onPlatformStanding)
+Humanoid.Swimming:connect(onSwimming)
+-- main program
+
+local runService = game:service("RunService");
+
+while Figure.Parent~=nil do
+local _, time = wait(0.1)
+move(time)
+end
+  	end    
+})
