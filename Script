@@ -426,10 +426,30 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name = "Button!",
+	Name = "Move sun",
 	Callback = function()
       		print("button")
 loadstring(game:HttpGet(('https://pastefy.app/oi4CGDzs/raw'),true))()
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Murder vs sheriff",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+Tab:AddButton({
+	Name = "RSO",
+	Callback = function()
+      		print("Thx")
+loadstring(game:HttpGet("https://pastebin.com/raw/u9mVta9M"))()
   	end    
 })
 
