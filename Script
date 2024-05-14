@@ -550,19 +550,6 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name = "fly script",
-	Callback = function()
-      		print("thx")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/dahoodios/main/hoodcustomfly", true))()
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddButton({
 	Name = "da ware",
 	Callback = function()
       		print("Thx")
