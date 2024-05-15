@@ -447,6 +447,19 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 
+Tab:AddButton({
+	Name = "Box esp",
+	Callback = function()
+      		print("button pressed")
+spawn(loadstring(game:HttpGet("https://pastebin.com/raw/zKjj0TQD", true)))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
 local Tab = Window:MakeTab({
 	Name = "Murder vs sheriff",
 	Icon = "rbxassetid://4483345998",
