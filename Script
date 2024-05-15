@@ -473,6 +473,32 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 
+Tab:AddButton({
+	Name = "Shiftlock",
+	Callback = function()
+      		print("button pressed")
+loadstring(game:HttpGet('https://pastebin.com/raw/WQ9NPeDS'))();
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Korblox/headless",
+	Callback = function()
+      		print("button pressed")
+loadstring(game:HttpGet('https://pastebin.com/raw/H5yx10Jq'))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
 local Tab = Window:MakeTab({
 	Name = "Murder vs sheriff",
 	Icon = "rbxassetid://4483345998",
