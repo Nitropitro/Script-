@@ -704,3 +704,8 @@ loadstring(game:HttpGet("https://pastebin.com/raw/1Gp9c57U"))()
 Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+            Title = "Thanks for using script";
+            Text = "Made by Nitr0";
+                    })
