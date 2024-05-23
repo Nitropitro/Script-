@@ -585,6 +585,19 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 
+Tab:AddButton({
+	Name = "Zombie fling only r6",
+	Callback = function()
+      		print("button")
+loadstring(game:HttpGet(('https://pastefy.app/w7KnPY70/raw'),true))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
 local Tab = Window:MakeTab({
 	Name = "Murder vs sheriff",
 	Icon = "rbxassetid://4483345998",
@@ -628,19 +641,6 @@ game:GetService("UserInputService").JumpRequest:connect(function()
 		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
 	end
 end)
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddButton({
-	Name = "Zombie fling only r6",
-	Callback = function()
-      		print("button pressed")
-loadstring(game:HttpGet(('https://pastefy.app/w7KnPY70/raw'),true))()
   	end    
 })
 
