@@ -597,6 +597,14 @@ Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
+local Section = Tab:AddSection({
+	Name = "Murder vs sheriff"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
 Tab:AddButton({
 	Name = "RSO",
 	Callback = function()
@@ -638,6 +646,14 @@ local Tab = Window:MakeTab({
 Name = <string> - The name of the tab.
 Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Da hood"
+})
+
+--[[
+Name = <string> - The name of the section.
 ]]
 
 Tab:AddButton({
@@ -720,6 +736,14 @@ local Tab = Window:MakeTab({
 Name = <string> - The name of the tab.
 Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Murder Mystery 2"
+})
+
+--[[
+Name = <string> - The name of the section.
 ]]
 
 Tab:AddButton({
