@@ -2,7 +2,7 @@ local player = game.Players.LocalPlayer
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Nitro Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({IntroText = "by Nitr0_Pitr0",Name = "Nitro Hub", HidePremium = false, SaveConfig = true, ConfigFolder = ""})
 
 --[[
 Name = <string> - The name of the UI.
@@ -641,6 +641,19 @@ game:GetService("UserInputService").JumpRequest:connect(function()
 		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
 	end
 end)
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Murder vs sheriff",
+	Callback = function()
+      		print("button pressed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubMurdervssheriff"))("https://t.me/arceusxscripts")
   	end    
 })
 
