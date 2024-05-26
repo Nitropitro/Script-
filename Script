@@ -1101,6 +1101,34 @@ getgenv().loopW = state
 })
 
 Tab:AddTextbox({
+	Name = "Jump",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(value)
+		print(value)
+getgenv().Jumppower = value
+    pcall(function()
+        game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = value
+    end)
+	end	  
+})
+
+Tab: AddToggle({
+	Name = "Loop jump power",
+	Callback = function(state)
+		print(value)
+getgenv().loopJ = state
+    game:GetService("RunService").Heartbeat:Connect(function()
+        if loopJ == true then
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = Jumppower
+            end)
+        end
+    end)
+	end	  
+})
+
+Tab:AddTextbox({
 	Name = "Fov",
 	Default = "",
 	TextDisappear = true,
