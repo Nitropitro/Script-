@@ -1072,6 +1072,14 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Section = Tab:AddSection({
+	Name = "Player"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
 Tab:AddTextbox({
 	Name = "Speed",
 	Default = "",
