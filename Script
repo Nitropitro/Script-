@@ -851,6 +851,21 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 
+Tab: AddButton({
+	Name = "Esp skeleton",
+	Callback = function(value)
+		print(value)
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Blissful4992/ESPs/main/UniversalSkeleton.lua"))()
+local Skeletons = {}
+for _, Player in next, game.Players:GetChildren() do
+	table.insert(Skeletons, Library:NewSkeleton(Player, true));
+end
+game.Players.PlayerAdded:Connect(function(Player)
+	table.insert(Skeletons, Library:NewSkeleton(Player, true));
+end) 
+end
+})
+
 local Tab = Window:MakeTab({
 	Name = "Murder vs sheriff",
 	Icon = "rbxassetid://4483345998",
@@ -1050,3 +1065,49 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/script-by/Nx-Crazy/ma
 Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
+
+local Tab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://15841340999",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Speed",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(value)
+		print(value)
+getgenv().Walkspeed = value
+    pcall(function()
+        game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
+    end)
+	end	  
+})
+
+Tab: AddToggle({
+	Name = "Loop speed",
+	Callback = function(state)
+		print(value)
+getgenv().loopW = state
+    game:GetService("RunService").Heartbeat:Connect(function()
+        if loopW == true then
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
+            end)
+        end
+    end)
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Fov",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(value)
+		print(value)
+local FovNumber = value
+local Camera = workspace.CurrentCamera
+Camera.FieldOfView = FovNumber  
+	end	  
+})
