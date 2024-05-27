@@ -18,7 +18,7 @@ CloseCallback = <function> - Function to execute when the window is closed.
 
 local Tab = Window:MakeTab({
 	Name = "Menu",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://15841340999",
 	PremiumOnly = false
 })
 
@@ -868,7 +868,7 @@ end
 
 local Tab = Window:MakeTab({
 	Name = "Murder vs sheriff",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://15841340999",
 	PremiumOnly = false
 })
 
@@ -932,7 +932,7 @@ Callback = <function> - The function of the button.
 
 local Tab = Window:MakeTab({
 	Name = "Da hood",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://15841340999",
 	PremiumOnly = false
 })
 
@@ -1022,7 +1022,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 
 local Tab = Window:MakeTab({
 	Name = "MM2",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://15841340999",
 	PremiumOnly = false
 })
 
